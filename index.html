@@ -10,8 +10,15 @@
     chufa
     <script src="dist/main.js"></script>
     <script>
-      var g = new Hiha("1111");
-      g.init({ openId: 111 }).then(res => {
+      var g = Hiha({
+        openId: "111",
+        onError: function() {
+          console.log("myError");
+        }
+      });
+
+      console.log(g);
+      g.getUserInfo({}).then(res => {
         console.log(res), rej => console.log(rej);
       });
     </script>

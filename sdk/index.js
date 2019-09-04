@@ -1,20 +1,25 @@
 import "babel-polyfill";
 import * as API from "./service/index";
-class Hiha {
-  constructor(openId) {
-    this.openId = openId;
-  }
-  init(params) {
-    return API.getAuth({ ...params });
-  }
-  getUserInfo(params) {
-    return API.getUserInfo({ ...params });
-  }
+// class hihasdk {
+//   constructor(params) {
+//     const { openId, onError = false } = params;
+//     this.openId = openId;
+//     this.scopes = [];
+//     this.onError = onError;
+//   }
+//   init(params) {
 
-  onError() {
-    console.log("Error");
-  }
+//   }
+//   getUserInfo(params) {
+//     return API.getUserInfo({ ...params });
+//   }
+//   onError(e) {
+//     log(e);
+//     this.onError && this.onError(e);
+//   }
+// }
+
+export default function hiha(opt = {}) {
+  const app = createSdk();
 }
-
-window.Hiha = Hiha;
-export default Hiha;
+// window.Hiha = hiha;
